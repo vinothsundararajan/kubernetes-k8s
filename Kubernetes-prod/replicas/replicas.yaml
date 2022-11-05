@@ -1,0 +1,24 @@
+  apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    name: nginx-prod-replica
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        env: production
+    template:
+      metadata:
+        name: nginx-prod
+        labels:
+          env: production
+      spec:
+        containers:
+          - name: myapp
+            image: nginx
+            resources:
+              limits:
+                memory: "125mi"
+                cpu: "250m"
+            ports:
+              - containerPort: 80

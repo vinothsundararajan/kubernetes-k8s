@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp
+  labels:
+    app: development  
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      env: development
+  template:
+    metadata:
+      name: myapp
+      labels:
+        app: myapp
+        type: front-end
+        env: development
+    spec:
+      containers:
+        - name: myapp
+          image: nginx
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 80

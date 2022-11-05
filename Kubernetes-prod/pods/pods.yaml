@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-prod
+  labels:
+    name: nginx-prod
+    env: production
+spec:
+  containers:
+  - name: nginx-prod
+    image: nginx
+    resources:
+      limits:
+        memory: "240Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80

@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  http-deployment
+  labels:
+    tier:  http-deployment
+spec:
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        name:  httpd-frontend
+    spec:
+      containers:
+        - image:  httpd:2.4
+          name:  httpd-frontend
+          resources:
+            limits:
+              cpu: "200m"
+              memory: "50Mi"
+          ports:
+            - containerPort: 80
+              protocol: TCP    
+          env:
+            - name:  env
+              value:  production
+  selector:
+    matchLabels:
+      name: httpd-frontend
+  minReadySeconds: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      #maxSurge: 1
+      maxUnavailable: 1
+
