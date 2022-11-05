@@ -1,0 +1,59 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  data:
+    index.html: |-
+      <!DOCTYPE html>
+      <html>
+         <head>
+            <title>HTML Backgorund Color</title>
+         </head>
+         <body style="background-color:green;">
+            <h1>Vinoth-K8s</h1>
+            <p>We have developed more than 10 products till now.</p>
+         </body>
+      </html>
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2022-11-05T12:42:42Z"
+    name: httpd-config
+    namespace: default
+    resourceVersion: "11088"
+    uid: a59e9c38-3901-4228-996c-9c524158a696
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIDBjCCAe6gAwIBAgIBATANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwptaW5p
+      a3ViZUNBMB4XDTIyMTAyNTA2MDUwN1oXDTMyMTAyMzA2MDUwN1owFTETMBEGA1UE
+      AxMKbWluaWt1YmVDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOx8
+      np6bHuZ1xb+DjmNmXqN40rzJH0OF2lB97s2vTpLYg5GjIJcny5Ckn5V7yBC9+VUo
+      QfIXVXv2ZgQAQJtl8jMZO/F6xxvlTaizcP+eJw6iVdA4yoJTameRFdri+fhaQ0CB
+      HjPGgW+fr6J6XouRlFJuoBScHeH4PyV7+dmZ5AS+tj7VUE/oKGKwlxOczbO8mu5r
+      Lfrp3p06p7aErP0zEl62nGppeI5ukP5sjf9rBhpS58Ie3v9j+Koyr0RCtTSs4abH
+      rKjI3MXegmel8H4oehiwUpdB+HPMiSOyY2jcq0FaX1nOHDuFZ+zmupTXNUFuZKI0
+      0Prrq3JmIJjtRTv77jUCAwEAAaNhMF8wDgYDVR0PAQH/BAQDAgKkMB0GA1UdJQQW
+      MBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQW
+      BBQp/52ZGOSchtJFVGok8qrvW++djTANBgkqhkiG9w0BAQsFAAOCAQEAzD7g3uGs
+      /7tcmR1NPAHBQ+uWyhlQg9+8YuByv2tn0t9v1O2stg+ynEkz05g7FnWiSXRA4ffh
+      joPOY/KDeaKv6YEnmZZK5EtpnfoCT5t7gL/rzWiPwGsKTHC30btym+K1eoivY6LZ
+      IMEOIvPcVSv/GW3ZNUp7khCk5o6SU5akTdLxUn9K6NC60lgfgXAGH3XvgImvZ5ZT
+      6nfSxqdU7udBr1D7dY/qV+vHrC1veUo6jiBtrS0ZT6IQ6HnMQ5RqOWGApqn7+n6o
+      NAxN9Zm5tIqzTijcnX3T5w4HcB90mzJEWkNRdQVqKr2mhYAeiEOIvINJiXqDX6nn
+      wMma1hee7M+zEA==
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2022-10-26T06:05:42Z"
+    name: kube-root-ca.crt
+    namespace: default
+    resourceVersion: "313"
+    uid: ae436a05-e2fc-4c7a-9ef5-623f2e0ba157
+kind: List
+metadata:
+  resourceVersion: ""

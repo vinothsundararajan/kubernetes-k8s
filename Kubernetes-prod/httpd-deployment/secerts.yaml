@@ -1,0 +1,16 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  data:
+    index.html: PCFET0NUWVBFIGh0bWw+CjxodG1sPgogICA8aGVhZD4KICAgICAgPHRpdGxlPkhUTUwgQmFja2dvcnVuZCBDb2xvcjwvdGl0bGU+CiAgIDwvaGVhZD4KICAgPGJvZHkgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6Z3JlZW47Ij4KICAgICAgPGgxPlZpbm90aC1LOHM8L2gxPgogICAgICA8cD5XZSBoYXZlIGRldmVsb3BlZCBtb3JlIHRoYW4gMTAgcHJvZHVjdHMgdGlsbCBub3cuPC9wPgogICA8L2JvZHk+CjwvaHRtbD4=
+  kind: Secret
+  metadata:
+    creationTimestamp: "2022-11-05T12:45:55Z"
+    name: httpd-config
+    namespace: default
+    resourceVersion: "11252"
+    uid: f9330948-bb1e-4b9d-a389-143d92155600
+  type: Opaque
+kind: List
+metadata:
+  resourceVersion: ""
