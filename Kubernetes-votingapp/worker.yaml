@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
   - name: worker
-    image: panasonixme/votingappworker
+    image: dockersamples/examplevotingapp_worker
     resources:
       limits:
         memory: "128Mi"

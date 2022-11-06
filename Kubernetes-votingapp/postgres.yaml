@@ -22,4 +22,4 @@ spec:
       value: trust
     ports:
       - containerPort: 5432
-
+        name: db

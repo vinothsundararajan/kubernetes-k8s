@@ -178,3 +178,28 @@
     selector:
         name: httpd-frontend
 
+#### Voting app
+
+    kubectl exec db-6789fcc76c-hvrs6 -- bash
+    apt update && apt install vim 
+    vim /var/lib/postgresql/data/pg_hba.conf (update trust)
+    su - postgres
+        psql
+        SELECT pg_reload_conf();
+        \q
+    kubectl logs db-6789fcc76c-hvrs6
+
+    Waiting for db
+    Waiting for db
+    Waiting for db
+    Connected to db
+    Found redis at 10.111.128.34
+    Connecting to redis
+    Processing vote for 'a' by 'd9aa8912c8ce5f81'
+    Processing vote for 'b' by 'd9aa8912c8ce5f81'
+    Processing vote for 'a' by 'd9aa8912c8ce5f81'
+    Processing vote for 'b' by 'd9aa8912c8ce5f81'
+    Processing vote for 'a' by 'd9aa8912c8ce5f81'
+    Processing vote for 'b' by 'd9aa8912c8ce5f81'
+    Processing vote for 'b' by '2806bb8c6d5e587e'
+    Processing vote for 'a' by 9461d629e0325e84'                               
