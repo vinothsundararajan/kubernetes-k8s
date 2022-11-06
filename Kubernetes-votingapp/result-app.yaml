@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: result-app
+  labels:
+    name: result
+    app: demo-voting-app
+spec:
+  containers:
+  - name: result
+    image: kodekloud/examplevotingapp_result:v1
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "100m"
+    ports:
+      - containerPort: 80
+
