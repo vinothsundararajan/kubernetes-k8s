@@ -3,7 +3,8 @@ kind: Pod
 metadata:
   name: voting-app
   labels:
-    name: vote
+    name: voting
+    app: demo-voting-app
 spec:
   containers:
   - name: vote
@@ -14,4 +15,3 @@ spec:
         cpu: "100m"
     ports:
       - containerPort: 80
-

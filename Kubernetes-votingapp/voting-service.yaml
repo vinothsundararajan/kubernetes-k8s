@@ -8,11 +8,10 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - name: vote
-    port: 80
-    protocol: TCP
-    targetPort: 80
-    nodePort: 30033
+    - name: voting-app
+      port: 80
+      targetPort: 80
+      nodePort: 30001
   selector:
-    name: vote
+    name: voting
     app: demo-voting-app
