@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-app
+  labels:
+    name: worker
+    app: demo-voting-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: worker-app
+      labels:
+        name: worker
+        app: demo-voting-app
+    spec:
+      containers:
+      - name: worker
+        image: dockersamples/examplevotingapp_worker
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+  selector:
+    matchLabels:
+      app: demo-voting-app

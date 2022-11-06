@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-app
+  labels:
+    name: postgres
+    app: demo-voting-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: postgres-app
+      labels:
+        name: db
+        app: demo-voting-app
+    spec:
+      containers:
+      - name: db
+        image: postgres:9.4
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        env:
+        - name: POSTGRES_USER
+          value: "postgres"
+        - name:  POSTGRES_PASSWORD
+          value: "postgres"
+        - name: POSTGRES_HOST_AUTH_METHOD
+          value: trust
+        ports:
+          - containerPort: 5432
+            name: db
+  selector:
+    matchLabels:
+      app: demo-voting-app
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: db
+  labels:
+    name: db
+    app: demo-voting-app
+spec:
+  type: ClusterIP
+  ports:
+  - name: db-service
+    port: 5432
+    protocol: TCP
+    targetPort:  5432
+  selector:
+    name: db
+    app: demo-voting-app
